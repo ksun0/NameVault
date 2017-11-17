@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+{% include 'tracker/_header.html' %}
+{% load staticfiles %}
+<body class="product-page">
+
+	{% include 'tracker/_navbar.html' %}
+
+	{% if 'LoL_NA' in games %}
+	<div class="page-header header-filter" data-parallax="active"  style="background-image: url({% static 'tracker/img/league_background.jpg' %});">
+		{% elif 'Minecraft' in games %}
+		<div class="page-header header-filter" data-parallax="active" style="background-image: url({% static 'tracker/img/minecraft_background.jpg' %});">
+			{% elif 'RuneScape' in games %}
+			<div class="page-header header-filter" data-parallax="active" style="background-image: url({% static 'tracker/img/runescape_background.jpg' %});">
+				{% elif 'Maplestory' in games %}
+				<div class="page-header header-filter" data-parallax="active" style="background-image: url({% static 'tracker/img/maplestory_background.jpg' %});">
+				{% else %}
+				<div class="page-header header-filter" data-parallax="active" style="background-image: url();">
+					{% endif %}
+
+					<div class="container">
+						<div class="row title-row">
+
+							<div class="col-xs-12">
+								<div class="" style="padding: 0">
+									<div class="content content-default">
+										<form class="" role="form" action="" method="GET">
+											<div class="row">
+												<div class="col-sm-8 col-xs-12">
+													<div class="input-group">
+														<span class="input-group-addon" style="color: white">
+															<i class="material-icons">search</i>
+														</span>
+														<input type="text" name="search" value="" placeholder="Enter Username..." class="form-control" required style="color: white"/>
+													</div>
+												</div>
+												<div class="col-sm-4 col-xs-12">
+													<button type="submit" class=
+													"btn btn-primary btn-raised btn-block"><i class=
+													"material-icons">search</i> Search</button>
+												</div>
+											</div>
+
+
+										</form>
+
+									</div>
+
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class="section section-gray">
+					<div class="container">
+
+						<div class="main main-raised main-product">
+							{% block body %}
+							{% endblock %}
+						</div>
+
+						{% if 'LoL_NA' in games %}
+
+						<div class="section text-center">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2">
+									<h2 class="title">Our Algorithm</h2>
+									<h5 class="description">In League of Legends, there are two ways
+										to claim an account name. One is to create a new account with
+										that name, and the other is to purchase a “Summoner Name Change”
+										on an existing account. League uses a system to automatically
+										release names from inactive accounts, based on the player’s
+										level and length of inaction.
+										<br/><br/>
+										When you use NameVault to search for a League name, you will
+										see you one four results:
+									</h5>
+								</div>
+							</div>
+							<div class="features">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="info">
+											<div class="icon icon-success"><i class=
+												"material-icons">label</i></div>
+												<h4 class="info-title">Free</h4>
+												<p>You will see this if no one in the listed region has this name. You can claim it through creating a new account or by purchasing a “Summoner Name Change” from an existing account.</p>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="info">
+												<div class="icon icon-warning"><i class=
+													"material-icons">label</i></div>
+													<h4 class="info-title">Available</h4>
+													<p>You will see this if a player in the listed region has this name, but has been inactive for so long that it can be taken from them. This can only be done through the use of a “Summoner Name Change.”</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="info">
+													<div class="icon icon-danger"><i class=
+														"material-icons">label</i></div>
+														<h4 class="info-title">Taken</h4>
+														<p>You will see this if an active player in the listed region has this name. If the player remains inactive from this day forward, the name will become available on the listed day.</p>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="info">
+														<div class="icon icon-danger"><i class=
+															"material-icons">label</i></div>
+															<h4 class="info-title">Invalid Name</h4>
+															<p>You will see this if you used a search term that uses a character League of Legends does not accept for display names. These vary by region.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% elif 'Minecraft' in games %}
+										<div class="section text-center">
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<h2 class="title">Our Algorithm</h2>
+													<h5 class="description">In Minecraft, there are two ways to claim
+														an account name. One is to create a new account with that name,
+														and the other is to perform a free name change on an existing
+														account (this can only be done once per month). Minecraft does
+														not automatically release names from inactive accounts, so
+														there is no way for us to entirely predict when a name will
+														become available.
+														<br/><br/>
+														When you use NameVault to search for a Minecraft name, you will
+														see you one three results:
+													</h5>
+												</div>
+											</div>
+											<div class="features">
+												<div class="row">
+													<div class="col-md-4">
+														<div class="info">
+															<div class="icon icon-success"><i class=
+																"material-icons">label</i></div>
+																<h4 class="info-title">Free</h4>
+																<p>You will see this if no Minecraft player currently has this name. In this case, you can claim this name with a new account, or with a free name change on an existing account.</p>
+															</div>
+														</div>
+														<div class="col-md-4">
+															<div class="info">
+																<div class="icon icon-danger"><i class=
+																	"material-icons">label</i></div>
+																	<h4 class="info-title">Taken</h4>
+																	<p>You will see this if a player currently has this name. You will not be able to take this name unless that player chooses to change their name to something else.</p>
+																</div>
+															</div>
+															<div class="col-md-4">
+																<div class="info">
+																	<div class="icon icon-danger"><i class=
+																		"material-icons">label</i></div>
+																		<h4 class="info-title">Invalid Name</h4>
+																		<p>You will see this if you used a search term that uses a character Minecraft does not accept for display names. This list includes all characters except for English letters, numbers, and underscores.</p>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+
+													{% elif 'RuneScape' in games %}
+													<div class="section text-center">
+														<div class="row">
+															<div class="col-md-8 col-md-offset-2">
+																<h2 class="title">Our Algorithm</h2>
+																<h5 class="description">In RuneScape, there are two ways to claim
+																	an account name. One is to create a new account with that name,
+																	and the other is to perform a name change on an existing account.
+																	This process can be done once per month for free on members
+																	accounts, and additional swaps can be purchased with game bonds.
+																	RuneScape does not automatically release names from inactive
+																	accounts, so there is no way for us to entirely predict when a
+																	name will become available. However, RuneScape does occasionally
+																	clear names off a large number of inactive accounts, in
+																	which case they will all become available at once.
+																	<br/><br/>
+																	When you use NameVault to search for a RuneScape name, you will
+																	see you one three results:
+																</h5>
+															</div>
+														</div>
+														<div class="features">
+															<div class="row">
+																<div class="col-md-4">
+																	<div class="info">
+																		<div class="icon icon-success"><i class=
+																			"material-icons">label</i></div>
+																			<h4 class="info-title">Free</h4>
+																			<p>You will see this if no Runescape player currently has this name. In this case, you can claim this name with a new account, or with a name change on an existing account.</p>
+																		</div>
+																	</div>
+																	<div class="col-md-4">
+																		<div class="info">
+																			<div class="icon icon-danger"><i class=
+																				"material-icons">label</i></div>
+																				<h4 class="info-title">Taken</h4>
+																				<p>You will see this if a player currently has this name. You will not be able to take this name unless that player chooses to change their name to something else or the RuneScape mods perform a mass clear of inactive display names.</p>
+																			</div>
+																		</div>
+																		<div class="col-md-4">
+																			<div class="info">
+																				<div class="icon icon-danger"><i class=
+																					"material-icons">label</i></div>
+																					<h4 class="info-title">Invalid Name</h4>
+																					<p>You will see this if you used a search term that uses a character RuneScape does not accept for display names. This list includes all characters except for English letters, numbers, hyphens, and spaces.</p>
+																				</div>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+																{% elif 'Maplestory' in games %}
+																<div class="section text-center">
+												          <div class="row">
+												            <div class="col-md-8 col-md-offset-2">
+												              <h2 class="title">Our Algorithm</h2>
+												              <h5 class="description">In Maplestory, there are two ways to claim
+												                an account name. One is to create a new account with that name,
+												                and the other is to perform a name change on an existing
+												                account with a name change coupon. Maplestory does
+												                not automatically release names from inactive accounts, so
+												                there is no way for us to entirely predict when a name will
+												                become available.
+												                 <br/><br/>
+												                 When you use NameVault to search for a Maplestory name, you will
+												                 see you one three results:
+												</h5>
+												              </div>
+												            </div>
+												            <div class="features">
+												              <div class="row">
+												                <div class="col-md-4">
+												                  <div class="info">
+												                    <div class="icon icon-success"><i class=
+												                      "material-icons">label</i></div>
+												                      <h4 class="info-title">Free</h4>
+												                      <p>You will see this if no Maplestory player currently has this name. In this case, you can claim this name with a new account, or with a name change coupon on an existing account.</p>
+												                      </div>
+												                    </div>
+												                    <div class="col-md-4">
+												                      <div class="info">
+												                        <div class="icon icon-danger"><i class=
+												                          "material-icons">label</i></div>
+												                          <h4 class="info-title">Taken</h4>
+												                          <p>You will see this if a player currently has this name. You will not be able to take this name unless that player chooses to change their name to something else.</p>
+												                          </div>
+												                        </div>
+												                        <div class="col-md-4">
+												                          <div class="info">
+												                            <div class="icon icon-danger"><i class=
+												                              "material-icons">label</i></div>
+												                              <h4 class="info-title">Invalid Name</h4>
+												                              <p>You will see this if you used a search term that uses a character Maplestory does not accept for display names.</p>
+												                              </div>
+												                            </div>
+
+												                          </div>
+												                        </div>
+																							</div>
+																{% endif %}
+
+															</div>
+														</div>
+
+														{% include 'tracker/_footer.html' %}
+
+													</body>
+													</html>

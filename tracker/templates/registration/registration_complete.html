@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+{% include 'tracker/_header.html' with title="| Register Complete" %}
+  {% load staticfiles %}
+<body class="signup-page">
+		{% include 'tracker/_navbar.html' %}
+
+
+    <div class="page-header" data-parallax="active" style="background:url({% static 'tracker/img/pattern.png' %});">
+    	<div class="container">
+			<div class="row">
+    			<div class="col-md-10 col-md-offset-1">
+
+					<div class="card card-signup">
+                        <h2 class="card-title text-center">Register</h2>
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-1">
+            					<div class="info info-horizontal">
+            						<div class="icon icon-success">
+            							<i class="material-icons">all_inclusive</i>
+            						</div>
+            						<div class="description">
+            							<h4 class="info-title">Multi-Game Support</h4>
+            							<p class="description">
+                        Keep track of desired names for
+                              each of the games you play, all in one place.
+            							</p>
+            						</div>
+            		        	</div>
+
+            					<div class="info info-horizontal">
+            						<div class="icon icon-info">
+            							<i class="material-icons">lock</i>
+            						</div>
+            						<div class="description">
+            							<h4 class="info-title">Personal Vault</h4>
+            							<p class="description">
+                          Instead of looking for a name over and
+                              over, add it to your <i>personal vault.</i>
+            							</p>
+            						</div>
+            					</div>
+
+            					<div class="info info-horizontal">
+            						<div class="icon icon-danger">
+            							<i class="material-icons">notifications_active</i>
+            						</div>
+            						<div class="description">
+            							<h4 class="info-title">Automatic Tracking</h4>
+            							<p class="description">
+                             NameVault
+                              will automatically notify you when a name becomes
+                              available.
+            							</p>
+            						</div>
+            					</div>
+            				</div>
+                            <div class="col-md-5">
+                                <h5>Activation email sent.</h5>
+                            </div>
+                        </div>
+                	</div>
+
+                </div>
+            </div>
+		</div>
+
+		<footer class="footer" id="registrationFooter">
+	        <div class="container">
+	            <nav class="pull-left">
+					<ul>
+						<li>
+							<a href="{% url 'tracker:index' %}">
+								NameVault
+							</a>
+						</li>
+						<li>
+							<a href="{% url 'tracker:leagueview' %}">
+							   League
+							</a>
+						</li>
+						<li>
+							<a href="{% url 'tracker:minecraftview' %}">
+								Minecraft
+							</a>
+						</li>
+            <li>
+              <a href="{% url 'tracker:runescapeview' %}">
+                Runescape
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'tracker:maplestoryview' %}">
+                Maplestory
+              </a>
+            </li>
+					</ul>
+	            </nav>
+	            <div class="copyright pull-right">
+	                &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="{% url 'tracker:index' %}" target="_blank">NameVault</a>
+	            </div>
+	        </div>
+	    </footer>
+
+    </div>
+
+
+</body>
+</html>

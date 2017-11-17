@@ -1,0 +1,88 @@
+{% extends 'tracker/landingbase.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div class="page-header header-filter" data-parallax="active" style="background-image:url({% static 'tracker/img/league_background.jpg' %})">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="title">Find League Usernames</h1>
+        <h4>Take control of your identity.</h4>
+      </div>
+      <div class="col-md-6">
+        <form class="" role="form" action="/league" method="GET">
+          <div class="form-group landing-search-box">
+            <input type="text" name="search" class="form-control landing-search" placeholder="Enter name:" required></div>
+            <button type="submit" class=
+            "btn btn-primary btn-raised btn-block"><i class=
+            "material-icons">search</i> Search Username</button></form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main main-raised">
+      <div class="container">
+        <div class="section text-center">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="title">Our Algorithm</h2>
+              <h5 class="description">In League of Legends, there are two ways
+                to claim an account name. One is to create a new account with
+                that name, and the other is to purchase a “Summoner Name Change”
+                 on an existing account. League uses a system to automatically
+                 release names from inactive accounts, based on the player’s
+                 level and length of inaction.
+                 <br/><br/>
+                 When you use NameVault to search for a League name, you will
+                 see you one four results:
+</h5>
+              </div>
+            </div>
+            <div class="features">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="info">
+                    <div class="icon icon-success"><i class=
+                      "material-icons">label</i></div>
+                      <h4 class="info-title">Free</h4>
+                      <p>You will see this if no one in the listed region has this name. You can claim it through creating a new account or by purchasing a “Summoner Name Change” from an existing account.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="info">
+                        <div class="icon icon-warning"><i class=
+                          "material-icons">label</i></div>
+                          <h4 class="info-title">Available</h4>
+                          <p>You will see this if a player in the listed region has this name, but has been inactive for so long that it can be taken from them. This can only be done through the use of a “Summoner Name Change.”</p>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="info">
+                            <div class="icon icon-danger"><i class=
+                              "material-icons">label</i></div>
+                              <h4 class="info-title">Taken</h4>
+                              <p>You will see this if an active player in the listed region has this name. If the player remains inactive from this day forward, the name will become available on the listed day.</p>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="info">
+                                <div class="icon icon-danger"><i class=
+                                  "material-icons">label</i></div>
+                                  <h4 class="info-title">Invalid Name</h4>
+                                  <p>You will see this if you used a search term that uses a character League of Legends does not accept for display names. These vary by region.</p>
+                                  </div>
+                                </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <p class="description">NameVault isn't endorsed by Riot Games
+                            and doesn't reflect the views or opinions of Riot Games
+                            or anyone officially involved in producing or managing
+                            League of Legends. League of Legends and Riot Games are
+                            trademarks or registered trademarks of Riot Games, Inc.
+                            League of Legends © Riot Games, Inc.</p>
+                        </div>
+                      </div>
+                            </div>
+                          </div>
+{% endblock %}

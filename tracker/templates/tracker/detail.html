@@ -1,0 +1,67 @@
+{% extends 'tracker/base.html' %}
+{% block title %}Name Details{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Left Name Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'tracker:detail' name.id %}">
+                        {% if name.game %}
+                            <img src="https://s-media-cache-ak0.pinimg.com/236x/2d/cc/36/2dcc363a73f27511e51969ac8cc15b92.jpg" class="img-responsive">
+                        {% else %}
+                            <h3>No image to display</h3>
+                        {% endif %}
+                    </a>
+                    <h1>{{ name.name }} <small>{{ name.game }}</small></h1>
+                    <h2>Release Date: {{ name.release_date }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Song Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'tracker:detail' name.id %}">View All</a></li>
+                <li role="presentation"><a href="{% url 'tracker:detail' name.id %}">Add New User</a></li>
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h3>All Users</h3>
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Email</th>
+                            <th>Requested</th>
+                            <th>Activity</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

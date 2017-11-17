@@ -1,0 +1,174 @@
+html, body {
+  overflow-x: hidden;
+}
+/* Registration Page */
+#registrationFooter {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;
+}
+
+/* LANDING */
+.landing-search-box {
+  border: 3px solid #888;
+  margin-bottom:20px;
+  padding: 20px;
+}
+
+.landing-search {
+  color: white;
+  height: 75px;
+  padding: 10px 0;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+/* END LANDING */
+
+/* NAVBAR */
+
+.navbar-login {
+  width: 300px;
+  color: #000000;
+  margin: 0 30px;
+}
+
+.navbar .navbar-brand-small {
+  position: relative;
+  height: 50px;
+  line-height: 30px;
+  color: inherit;
+  padding: 10px 15px;
+  font-weight: 400;
+  font-size: 90%;
+}
+
+/* END NAVBAR */
+
+.game-icon {
+  width: 110px;
+  margin: 30px 10px 0 10px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.7), 0 3px 14px 2px rgba(0, 0, 0, 0.7), 0 5px 5px -3px rgba(0, 0, 0, 0.7);
+}
+
+hr.hr-styled {
+  padding: 0;
+  border: none;
+  border-top: medium double #aaa;
+  color: #aaa;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+
+hr.hr-styled:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+.fade-info {
+  opacity: 0;
+}
+
+
+
+/* ANIMATIONS */
+
+.loader {
+  margin-top: 100px;
+}
+
+.double-pulse {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 100%;
+  background-color: #000000;
+  opacity: .4;
+  animation: double-pulse 1.5s infinite ease-out;
+}
+.double-pulse:nth-of-type(2) {
+  animation-delay: -350ms;
+}
+
+@keyframes double-pulse {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-card {
+  opacity: 0;
+  animation: fadeIn 2s ease-in 1 forwards;
+}
+
+.ads-card {
+  padding: 10px;
+}
+
+/* END ANIMATIONS */
+
+@media (max-width: 768px) {
+  .game-icon {
+    width: 50px;
+    margin: 10px 5px 0 5px;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.7), 0 3px 14px 2px rgba(0, 0, 0, 0.7), 0 5px 5px -3px rgba(0, 0, 0, 0.7);
+  }
+
+  .landing-search-box {
+    border: 3px solid #888;
+    margin-bottom:10px;
+    padding: 15px;
+  }
+
+  .landing-search {
+    color: white;
+    height: 50px;
+    padding: 10px 0;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .navbar-login {
+    width: 250px;
+    color: #ffffff;
+    margin: 0 30px;
+  }
+
+  .navbar-login .input-group-addon {
+    color: #ffffff;
+  }
+
+  .navbar-login h3 {
+    color: #ffffff;
+  }
+
+  .navbar-login input {
+      color: #ffffff;
+  }
+
+  .navbar-login a {
+      color: #ffffff;
+  }
+}

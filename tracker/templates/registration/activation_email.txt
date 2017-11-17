@@ -1,0 +1,5 @@
+Dear User,
+Here is your activation link: {% if request.is_secure %}https://{% else %}http://{% endif %}www.namevault.io/accounts/activate/{{activation_key}}.
+This expires in {{expiration_days}} days.
+Thank you so much for signing up!
+If you did not sign up for Name Vault or no longer interested in our services, please ignore this email.

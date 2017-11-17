@@ -1,0 +1,81 @@
+{% extends 'tracker/base.html' %}
+
+{% block body %}
+
+
+<h2 class="text-center">Search Results For {{ search }}:</h2>
+
+<hr class="hr-styled">
+
+<div class="row">
+  <div class="col-md-9 col-xs-12">
+    <div id="main">
+    </div>
+    <div class="loader">
+      <div class="double-pulse"></div>
+      <div class="double-pulse"></div>
+    </div>
+  </div>
+  <div class="col-md-3 col-xs-12">
+    <div class="ads-card">
+      {% if 'LoL_NA' in games %}
+      <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=name05-20&marketplace=amazon&region=US&placement=B014X427WM&asins=B014X427WM&linkId=52a823ed60bf02ac673cfd451ce0645c&show_border=false&link_opens_in_new_window=true&price_color=cccccc&title_color=ffffff&bg_color=204D74">
+      </iframe>
+
+          {% elif 'RuneScape' in games %}
+          <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=name05-20&marketplace=amazon&region=US&placement=B00VKLMFPQ&asins=B00VKLMFPQ&linkId=7e4273e88774d1ec2beff78c3cc17b3e&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+    </iframe>
+              {% endif %}
+    </div>
+  </div>
+</div>
+
+<hr class="hr-styled">
+
+<script>
+// Preprocessing
+var search = "{{search}}";
+var games = "{{games|safe}}";
+var container = "";
+games = games.substring(1,games.length-1).split(',');
+for (i = 0; i < games.length; i++) {
+  if (games[i][0] == " ") {
+    games[i] = games[i].substring(2,games[i].length-1);
+  } else {
+    games[i] = games[i].substring(1,games[i].length-1);
+  }
+}
+
+$(document).ready(function () {
+  var ready = 0
+  for (i = 0; i < games.length; i++) {
+    $.ajax({url: "?lookup=" + search + "&game=" + games[i] + "&number=" + i, success: function(data) {
+      $("#main").append(data);
+    }}).then(function() {
+      ready += 1;
+      if (ready == games.length) {
+        $(".loader").css("display", "none");
+      }
+    })
+  }
+  $(document).on("click", ".quickFollowButton", function(e) {
+    e.preventDefault();
+    $.get('../names/follow/' + $(e.target).attr('data-game') + '/' + $(e.target).attr('data-name'),
+    function(data, status) {
+      $(e.target).addClass("quickUnfollowButton")
+      $(e.target).removeClass("quickFollowButton")
+      $(e.target).text('Unfollow')
+    });
+  });
+  $(document).on("click", ".quickUnfollowButton", function(e) {
+    e.preventDefault();
+    $.get('../names/unfollow/' + $(e.target).attr('data-game') + '/' + $(e.target).attr('data-name'),
+    function(data, status) {
+      $(e.target).removeClass("quickUnfollowButton")
+      $(e.target).addClass("quickFollowButton")
+      $(e.target).text('Follow')
+    });
+  });
+});
+</script>
+{% endblock %}

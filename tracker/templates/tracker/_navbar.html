@@ -1,0 +1,96 @@
+
+<nav class="navbar navbar-primary navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'tracker:index' %}">NameVault</a>
+      {# <a class="navbar-brand navbar-brand-small" href="{% url 'tracker:index' %}">League of Legends</a>#}
+    </div>
+
+    <div class="collapse navbar-collapse" id="navigation-example">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons">view_carousel</i> Games
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu dropdown-with-icons">
+
+            <li class="disabled">
+                <a href="javascript:;">
+                  <i class="material-icons">apps</i> League of Legends
+                </a>
+              </li>
+            <li>
+                <a href="{% url 'tracker:minecraftview' %}">
+                  <i class="material-icons">apps</i> Minecraft
+                </a>
+              </li>
+              <li>
+                  <a href="{% url 'tracker:runescapeview' %}">
+                    <i class="material-icons">apps</i> Runescape
+                  </a>
+                </li>
+                <li>
+                    <a href="{% url 'tracker:maplestoryview' %}">
+                      <i class="material-icons">apps</i> Maplestory
+                    </a>
+                  </li>
+
+          </ul>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons">face</i> {{request.user.email}}
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu dropdown-with-icons">
+
+            <li>
+                <a href="{% url 'tracker:profile' %}">
+                  <i class="material-icons">account_circle</i> Profile
+                </a>
+              </li>
+            <li>
+								<a href="{% url 'tracker:profile' %}">
+									<i class="material-icons">settings</i> Settings
+								</a>
+							</li>
+              <li class="divider"></li>
+              <li>
+                  <a href="{% url 'auth_logout' %}">
+                    <i class="material-icons">exit_to_app</i> Logout
+                  </a>
+                </li>
+          </ul>
+        </li>
+        {% else %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons">face</i> Login
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <div class="navbar-login">
+          {% include 'tracker/_login.html' %}
+          </div>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'registration_register' %}" class="btn btn-white btn-raised btn-round">
+            <i class="material-icons">account_circle</i> Sign Up
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

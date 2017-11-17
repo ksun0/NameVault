@@ -1,0 +1,74 @@
+{% extends 'tracker/landingbase.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div class="page-header header-filter" data-parallax="active" style="background-image:url({% static 'tracker/img/minecraft_background.jpg' %})">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="title">Find Minecraft Usernames</h1>
+        <h4>Take control of your identity.</h4>
+      </div>
+      <div class="col-md-6">
+        <form class="" role="form" action="/minecraft" method="GET">
+          <div class="form-group landing-search-box">
+            <input type="text" name="search" class="form-control landing-search" placeholder="Enter name:" required></div>
+            <button type="submit" class=
+            "btn btn-success btn-raised btn-block"><i class=
+            "material-icons">search</i> Search Username</button></form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main main-raised">
+      <div class="container">
+        <div class="section text-center">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="title">Our Algorithm</h2>
+              <h5 class="description">In Minecraft, there are two ways to claim
+                an account name. One is to create a new account with that name,
+                and the other is to perform a free name change on an existing
+                account (this can only be done once per month). Minecraft does
+                not automatically release names from inactive accounts, so
+                there is no way for us to entirely predict when a name will
+                become available.
+                 <br/><br/>
+                 When you use NameVault to search for a Minecraft name, you will
+                 see you one three results:
+</h5>
+              </div>
+            </div>
+            <div class="features">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="info">
+                    <div class="icon icon-success"><i class=
+                      "material-icons">label</i></div>
+                      <h4 class="info-title">Free</h4>
+                      <p>You will see this if no Minecraft player currently has this name. In this case, you can claim this name with a new account, or with a free name change on an existing account.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="info">
+                        <div class="icon icon-danger"><i class=
+                          "material-icons">label</i></div>
+                          <h4 class="info-title">Taken</h4>
+                          <p>You will see this if a player currently has this name. You will not be able to take this name unless that player chooses to change their name to something else.</p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="info">
+                            <div class="icon icon-danger"><i class=
+                              "material-icons">label</i></div>
+                              <h4 class="info-title">Invalid Name</h4>
+                              <p>You will see this if you used a search term that uses a character Minecraft does not accept for display names. This list includes all characters except for English letters, numbers, and underscores.</p>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                            </div>
+                          </div>
+{% endblock %}
